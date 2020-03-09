@@ -4,35 +4,35 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using DemoWebAPI.Models;
 
 namespace DemoWebAPI.Controllers
 {
-//    [Authorize]
-    public class ValuesController : ApiController
+    public class PeopleController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        // GET: api/People
+        public IEnumerable<Person> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/5
+        // GET: api/People/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST: api/People
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/values/5
+        // PUT: api/People/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE: api/People/5
         public void Delete(int id)
         {
         }
