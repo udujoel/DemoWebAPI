@@ -10,16 +10,30 @@ namespace DemoWebAPI.Controllers
 {
     public class PeopleController : ApiController
     {
+        List<Person> people = new List<Person>();
+
+        public PeopleController()
+        {
+            people.Add(new Person {FirstName = "Martin", LastName = "Freeman", id = 1});
+            people.Add(new Person {FirstName = "Romerio", LastName = "Marinez", id = 2});
+            people.Add(new Person {FirstName = "Donald", LastName = "Firima", id = 3});
+            people.Add(new Person {FirstName = "F", LastName = "Ogbu", id = 4});
+
+        }
+
         // GET: api/People
         public IEnumerable<Person> Get()
         {
-            return new string[] { "value1", "value2" };
+            return people;
         }
 
         // GET: api/People/5
-        public string Get(int id)
+        public Person Get(int id)
         {
-            return "value";
+            var found = people.FirstOrDefault(x => x.id == id);
+            
+
+            return found;
         }
 
         // POST: api/People
